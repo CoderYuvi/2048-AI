@@ -1,7 +1,5 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include<windows.h>
-
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -16,7 +14,7 @@ MainWindow::MainWindow(QWidget *parent) :
             for(int j=0;j<4;j++)
             {
                 labels[i][j]= new QLabel("",this);
-                grid->addWidget(labels[i][j], i+1, j);
+                grid->addWidget(labels[i][j], i, j);
                 labels[i][j]->setAlignment(Qt::AlignCenter);
                 looks(i,j);
             }
@@ -25,10 +23,9 @@ MainWindow::MainWindow(QWidget *parent) :
 }
 void MainWindow::windowstart()
 {
-    setWindowTitle("2048 by JOKER");
+    setWindowTitle("2048 by kungfucat");
     setFixedSize(500,500);
-    QPixmap bkgnd("C:/Users/user/Documents/2048byJOKER/background.jpg");
-    bkgnd = bkgnd.scaled(this->size(), Qt::IgnoreAspectRatio);
+    QPixmap bkgnd(":\background.jpeg");
     QPalette palette;
     palette.setBrush(QPalette::Background, bkgnd);
     this->setPalette(palette);
