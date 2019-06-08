@@ -6,8 +6,10 @@
 #include<QLabel>
 #include<QGridLayout>
 #include<QPixmap>
+#include<bits/stdc++.h>
 #include<QMessageBox>
 #include<QKeyEvent>
+#include "board.h"
 namespace Ui {
 class MainWindow;
 }
@@ -23,18 +25,15 @@ public:
 
 private:
     void windowstart();
-    void play();
-    void Move();
-    bool boardfull();
-    void nexttile();
+    void AIPlay();
+    void endGame();
+    void bestMove();
     void looks(int ,int);
-    void up(int a[4][4]);
-    void left(int a[4][4]);
-    void right(int a[4][4]);
-    void down(int a[4][4]);
+    void updateUI();
     QWidget *centralWidget;
     QGridLayout *grid;
     QLabel* labels[4][4];
+    Board myBoard;
     Ui::MainWindow *ui;
 };
 
